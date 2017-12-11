@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/woc7012grp.iml" filepath="$PROJECT_DIR$/.idea/woc7012grp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../groupproject/woc7012grp/.idea/woc7012grp.iml" filepath="$PROJECT_DIR$/../groupproject/woc7012grp/.idea/woc7012grp.iml" />
     </modules>
   </component>
 </project>
