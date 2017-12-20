@@ -16,6 +16,10 @@
 
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/docs/4.0/examples/navbar-top/navbar-top.css" rel="stylesheet">
+
+    {% block stylesheet %}
+
+{% endblock stylesheet %}
 </head>
 
 <body>
@@ -42,10 +46,10 @@
 </nav>
 
 <main role="main" class="container">
-    <div class="jumbotron">
+
         {% block content %}
         {% endblock %}
-    </div>
+
 </main>
 
 

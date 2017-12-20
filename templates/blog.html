@@ -1,11 +1,68 @@
 {% extends 'base.html' %}
 
+
+{% block stylesheet %}
+    <link href="https://getbootstrap.com/docs/4.0/examples/album/album.css" rel="stylesheet">
+
+{% endblock stylesheet %}
+
+
+
 {% block content %}
-    {% for post in object_list %}
-        <div class="post-entry">
-            <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text }}</p>
-            <img src="{{ post.post_logo }}" alt="No image">
+    <body>
+
+
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading">Latest news</h1>
+                <p class="lead text-muted">here are the latest news fml</p>
+            </div>
+        </section>
+
+        <div class="album text-muted">
+            <div class="container">
+
+                <div class="row">
+
+                    {% for post in object_list %}
+                        <div class="card">
+                            <div class="post-entry">
+                                <a href="{% url 'post_detail' post.pk %}">
+                                    <img border="0" alt="{{ post.title }}" src="{{ post.post_logo }}" width="200" height="150">
+                                </a>
+                                <p class="card-text">{{ post.text }}</p>
+
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            </div>
         </div>
-    {% endfor %}
+
+    </main>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://getbootstrap.com/assets/js/vendor/popper.min.js"></script>
+    <script src="https://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/assets/js/vendor/holder.min.js"></script>
+    <script>
+        Holder.addTheme('thumb', {
+            bg: '#55595c',
+            fg: '#eceeef',
+            text: 'Thumbnail'
+        });
+    </script>
+    </body>
+
 {% endblock content %}
