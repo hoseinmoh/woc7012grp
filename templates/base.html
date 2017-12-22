@@ -1,4 +1,4 @@
-
+{% if user.is_authenticated %}
 
 <!doctype html>
 <html lang="en">
@@ -25,7 +25,8 @@
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    <a class="navbar-brand" href="#">Football community</a>
+    <a class="navbar-brand" href="#">{% if user.is_authenticated %}
+  Hi {{ user.username }}{% endif %} Welcome</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -64,3 +65,9 @@
 <script src="../../../../dist/js/bootstrap.min.js"></script>
 </body>
 </html>
+{% else %}
+    <p>You are not logged in.</p>
+    <h1>Access Denied</h1>
+    <span>We're sorry, but you are not authorized to view this page (Error: 403)</span>
+    <a href="{% url 'login' %}">login</a>
+{% endif %}
